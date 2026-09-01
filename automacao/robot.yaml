@@ -1,0 +1,11 @@
+tasks:
+  Login Tests:
+    command:
+      - robot
+      - --outputdir
+      - results
+      - tests/
+
+artifactsDir: results
+
+condaYaml: conda.yaml

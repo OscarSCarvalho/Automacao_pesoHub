@@ -1,0 +1,16 @@
+# Robot Framework outputs
+output.xml
+log.html
+report.html
+selenium-screenshot-*.png
+
+# Results folder (generated on each run)
+results/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
