@@ -136,6 +136,10 @@ Input:              xpath=//input[@placeholder='placeholder']
 | 37 | Cancelar Edição Do Produto | ativo |
 | 38 | Cancelar Exclusão De Produto | ativo |
 | 39 | Excluir Produto Cadastrado | ativo |
+| 40 | Cadastrar Produto Com EAN-13 Já Existente | ativo |
+| 41 | EAN-13 Trunca Digitação Acima De 13 Dígitos | ativo |
+| 42 | Preço Unitário Bloqueia Caracteres Não Numéricos | ativo |
+| 43 | Preço Unitário Negativo É Rejeitado | ativo |
 
 ### Smoke — `tests/smoke/smoke_test.robot`
 | # | Cenário | Tag |
@@ -261,3 +265,4 @@ start results/report.html
 | Data | O que foi feito |
 |---|---|
 | 2026-09-01 | Inicializado `.git`, criado `.gitignore` e `README.md`, push para GitHub, criada branch `develop`, criado módulo Cadastros completo (76 cenários no total), executada suite completa (resultado: 17/40 passaram) |
+| 2026-09-06 | Adicionados 4 novos cenários de validação de campo em Produtos: EAN-13 duplicado, EAN-13 truncagem > 13 dígitos, Preço bloqueia texto não-numérico, Preço negativo rejeitado. Implementados nas 4 camadas (variables, pages, steps, tests). Suite Produtos: 22 ativos + 1 pendente. |
