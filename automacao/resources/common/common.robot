@@ -16,9 +16,9 @@ Abrir Navegador
     Call Method     ${options}    add_argument    --no-sandbox
     Call Method     ${options}    add_argument    --disable-dev-shm-usage
     IF    '${HEADLESS}' == 'true'
-        Call Method     ${options}    add_argument    --headless=new
-        Call Method     ${options}    add_argument    --disable-gpu
-        Call Method     ${options}    add_argument    --window-size=1920,1080
+        Evaluate    $options.add_argument('--headless=new')
+        Evaluate    $options.add_argument('--disable-gpu')
+        Evaluate    $options.add_argument('--window-size=1920,1080')
     END
     Create WebDriver    Chrome    options=${options}
     Set Selenium Timeout        ${TIMEOUT}
