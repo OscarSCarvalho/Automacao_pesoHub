@@ -6,6 +6,7 @@ ${BROWSER}          chrome
 ${TIMEOUT}          10s
 ${TIMEOUT_LONGO}    45s
 ${IMPLICIT_WAIT}    5s
+${HEADLESS}         false
 
 *** Keywords ***
 Abrir Navegador
@@ -14,6 +15,11 @@ Abrir Navegador
     Call Method     ${options}    add_argument    --disable-notifications
     Call Method     ${options}    add_argument    --no-sandbox
     Call Method     ${options}    add_argument    --disable-dev-shm-usage
+    IF    '${HEADLESS}' == 'true'
+        Call Method     ${options}    add_argument    --headless=new
+        Call Method     ${options}    add_argument    --disable-gpu
+        Call Method     ${options}    add_argument    --window-size=1920,1080
+    END
     Create WebDriver    Chrome    options=${options}
     Set Selenium Timeout        ${TIMEOUT}
     Set Selenium Implicit Wait  ${IMPLICIT_WAIT}
