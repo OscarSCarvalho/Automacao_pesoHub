@@ -66,5 +66,13 @@ ${TERMO_BUSCA_INEXISTENTE}          XPTO123NAOEXISTE
 # ── Dados de Teste – Edição ───────────────────────────────────────────────────
 ${NOME_PRODUTO_EDITADO}             PRODUTO TESTE EDITADO
 
+# ── Dados de Teste – Validações de Campo ──────────────────────────────────────
+${CODIGO_PRODUTO_AUX}               9002
+${NOME_PRODUTO_AUX}                 PRODUTO AUX AUTO
+${EAN_ACIMA_LIMITE}                 12345678901234567890
+${EAN_TRUNCADO}                     1234567890123
+${PRECO_NEGATIVO}                   -10
+${PRECO_TEXTO_INVALIDO}             abc
+
 # ── Locators dinâmicos (dependem de variáveis acima) ─────────────────────────
 ${PRODUTO_NA_TELA}                  xpath=//*[contains(text(),'${CODIGO_PRODUTO_VALIDO}')]

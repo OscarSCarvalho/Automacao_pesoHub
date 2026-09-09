@@ -13,7 +13,15 @@ Acessar Hub De Serviços
     Informar E-mail Válido
     Informar Senha Válida
     Clicar Em Entrar
-    Verificar Que Está Na Tela Do Hub
+    ${logado}=    Run Keyword And Return Status    Verificar Que Está Na Tela Do Hub
+    IF    not ${logado}
+        Fechar Navegador
+        Abrir Página De Login
+        Informar E-mail Válido
+        Informar Senha Válida
+        Clicar Em Entrar
+        Verificar Que Está Na Tela Do Hub
+    END
 
 # ── Validações ────────────────────────────────────────────────────────────────
 

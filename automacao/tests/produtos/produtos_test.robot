@@ -139,3 +139,39 @@ Excluir Produto Cadastrado
     Iniciar Exclusão Do Produto
     Confirmar Exclusão
     Validar Produto Removido Da Lista
+
+# ── EAN-13: Validações ────────────────────────────────────────────────────────
+
+Cadastrar Produto Com EAN-13 Já Existente
+    [Tags]    ativo
+    Garantir Produto Cadastrado
+    Iniciar Cadastro De Novo Produto
+    Informar Código Produto Auxiliar
+    Informar EAN13 Duplicado
+    Informar Nome Produto Auxiliar
+    Informar Preço Unitário Do Produto
+    Salvar Cadastro De Produto
+    Validar Rejeição De EAN13 Duplicado
+
+EAN-13 Trunca Digitação Acima De 13 Dígitos
+    [Tags]    ativo
+    Iniciar Cadastro De Novo Produto
+    Preencher EAN13 Acima Do Limite
+    Validar EAN13 Truncado Para 13 Caracteres
+
+# ── Preço Unitário: Validações ────────────────────────────────────────────────
+
+Preço Unitário Bloqueia Caracteres Não Numéricos
+    [Tags]    ativo
+    Iniciar Cadastro De Novo Produto
+    Tentar Preencher Preço Com Texto Inválido
+    Validar Campo Preço Não Aceita Texto
+
+Preço Unitário Negativo É Rejeitado
+    [Tags]    ativo
+    Iniciar Cadastro De Novo Produto
+    Informar Código Do Produto
+    Informar Nome Do Produto
+    Preencher Preço Negativo
+    Salvar Cadastro De Produto
+    Validar Rejeição De Preço Negativo

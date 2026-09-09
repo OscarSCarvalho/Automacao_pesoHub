@@ -144,3 +144,39 @@ Validar Produto Removido Da Lista
 
 Validar Produto Ainda Na Lista
     Verificar Produto Ainda Na Lista
+
+# ── EAN-13: Duplicado ─────────────────────────────────────────────────────────
+
+Informar Código Produto Auxiliar
+    Preencher Código Do Produto    ${CODIGO_PRODUTO_AUX}
+
+Informar EAN13 Duplicado
+    Preencher EAN13 Do Produto    ${EAN13_VALIDO}
+
+Informar Nome Produto Auxiliar
+    Preencher Nome Do Produto    ${NOME_PRODUTO_AUX}
+
+Validar Rejeição De EAN13 Duplicado
+    Verificar Formulário De Cadastro Ainda Aberto
+
+# ── EAN-13: Truncagem ─────────────────────────────────────────────────────────
+
+Preencher EAN13 Acima Do Limite
+    Preencher EAN13 Do Produto    ${EAN_ACIMA_LIMITE}
+
+Validar EAN13 Truncado Para 13 Caracteres
+    Verificar Campo EAN13 Truncado
+
+# ── Preço: Validações ─────────────────────────────────────────────────────────
+
+Tentar Preencher Preço Com Texto Inválido
+    Tentar Preencher Preço Com Texto    ${PRECO_TEXTO_INVALIDO}
+
+Validar Campo Preço Não Aceita Texto
+    Verificar Campo Preço Vazio
+
+Preencher Preço Negativo
+    Preencher Preço Unitário Do Produto    ${PRECO_NEGATIVO}
+
+Validar Rejeição De Preço Negativo
+    Verificar Formulário De Cadastro Ainda Aberto

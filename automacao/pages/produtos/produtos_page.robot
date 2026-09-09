@@ -154,3 +154,20 @@ Verificar Produto Removido Da Lista
 
 Verificar Produto Ainda Na Lista
     Element Should Be Visible       ${PRODUTO_NA_TELA}
+
+# ── Validações de Campo ───────────────────────────────────────────────────────
+
+Tentar Preencher Preço Com Texto
+    [Arguments]    ${texto}
+    Aguardar Elemento Visível       ${INPUT_PRECO_UNITARIO}
+    Clear Element Text              ${INPUT_PRECO_UNITARIO}
+    Input Text                      ${INPUT_PRECO_UNITARIO}    ${texto}
+
+Verificar Campo Preço Vazio
+    ${valor}=    Get Value           ${INPUT_PRECO_UNITARIO}
+    Should Be Empty                  ${valor}
+
+Verificar Campo EAN13 Truncado
+    ${valor}=    Get Value           ${INPUT_EAN13}
+    Length Should Be                 ${valor}    13
+    Should Be Equal                  ${valor}    ${EAN_TRUNCADO}
